@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>translations-ms</artifactId>
+        <groupId>com.sfl.coolmonkey.translations-ms</groupId>
+        <version>0.1.0</version>
+    </parent>
+
+    <groupId>com.sfl.coolmonkey.translations-ms.service</groupId>
+    <artifactId>service</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <hibernate.javax.persistence.version>1.0.0.Final</hibernate.javax.persistence.version>
+    </properties>
+
+    <modules>
+        <module>service-core</module>
+        <module>service-impl</module>
+        <module>service-integrationtest</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sfl.coolmonkey.translations-ms.persistence</groupId>
+                <artifactId>persistence-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sfl.coolmonkey.translations-ms.service</groupId>
+                <artifactId>service-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>${hibernate.javax.persistence.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orica.core.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

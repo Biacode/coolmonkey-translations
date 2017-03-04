@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>translations-ms</artifactId>
+        <groupId>com.sfl.coolmonkey.translations-ms</groupId>
+        <version>0.1.0</version>
+    </parent>
+
+    <groupId>com.sfl.coolmonkey.translations-ms.persistence</groupId>
+    <artifactId>persistence</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>persistence-core</module>
+        <module>persistence-impl</module>
+    </modules>
+
+    <properties>
+        <hibernate.version>4.3.10.Final</hibernate.version>
+        <mysql.connector.version>5.1.35</mysql.connector.version>
+        <spring.data.version>1.8.1.RELEASE</spring.data.version>
+        <c3po.version>0.9.5.1</c3po.version>
+        <jdbcdslog.version>1.0.6</jdbcdslog.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sfl.coolmonkey.translations-ms.service</groupId>
+                <artifactId>service-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sfl.coolmonkey.translations-ms.persistence</groupId>
+                <artifactId>persistence-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring.data.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3po.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.usc</groupId>
+                <artifactId>jdbcdslog</artifactId>
+                <version>${jdbcdslog.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
